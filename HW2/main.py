@@ -8,7 +8,7 @@ items = int(input())
 flag = False
 while flag == False:
     if (items %2!=0):
-        print("по задаче только числа кратные 2, введите количествоеще раз: ")
+        print("по задаче только числа кратные 2, введите количество еще раз: ")
         items = int(input())
         flag = False
     else:    flag = True
