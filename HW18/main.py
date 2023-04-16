@@ -16,12 +16,13 @@ x = int(input('Введите число X для поиска ближайше�
 flag = False
 j=0
 temp=0
-min = col[0]
 if x<col[0]:
     temp=0
+if x>col[-1]:
+    temp=-1
 else:
     while flag==False:
-        if col[j]>x:
+        if col[j]>x and col[-1]>x:
             temp=j-1
             flag=True
         else:
