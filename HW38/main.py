@@ -24,15 +24,17 @@ def findNumber(dict1):
     print('3 - изменить запись.')
     n= int(input('Выберите вариант: '))
     if n==1:
-        print('**********')
+        choice(dict1)
     if n==2:
         deleteNum()
         print('Отображаю обновлённый справочник: ')
         getPhone(dictPhone)
+        choice(dict1)
     if n==3:
         changeNum()
         print('Отображаю обновлённый справочник: ')
         getPhone(dictPhone)
+        choice(dict1)
 def deleteNum():
     n = int(input('выберите № записи для удаления: '))
     dictPhone.pop(n)
@@ -61,17 +63,21 @@ def addFile():
         for k in dictPhone:
             file.write(f'{dictPhone[k][0]};{dictPhone[k][1]};{dictPhone[k][2]}\n')    
 def choice(dict):
-    print('Выберите действие с телефонным справочником от 1 до 3:')
-    print('1 - Показать справочник, 2 - Произвести поиск по запросу, 3 - Добавить данные в справочник')
+    print('Выберите действие с телефонным справочником от 1 до 4:')
+    print('1 - Показать справочник, 2 - Произвести поиск по запросу, 3 - Добавить данные в справочник, 4 - Выход')
     n = int(input('Ваш выбор: '))
     if n==1:
         getPhone(dict)
+        choice(dict)
     if n==2:
         findNumber(dict)
     if n==3:
         addPhone()
         getPhone(dict)
-    if 1<n and n>3:
+        choice(dict)
+    if n==4:
+        print('До Свидания!')
+    if 1<n and n>4:
         print('Не верный выбор, попробуйте еще раз:')
         choice(dictPhone)
 
